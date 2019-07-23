@@ -5,15 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-
+### Added
+- Add support for service failure actions. (See: `ServiceFailureActions`, 
+  `Service::update_failure_actions`, `Service::get_failure_actions`, 
+  `Service::set_failure_actions_on_non_crash_failures`, 
+  `Service::get_failure_actions_on_non_crash_failures`)
 
 ## [0.2.0] - 2019-04-01
 ### Added
-- Add support for specifying service dependencies when creating a service.
-- A `ServiceExitCode::NO_ERROR` constant for easy access to the success value.
+- Add `ServiceExitCode::NO_ERROR` constant for easy access to the success value.
 - Add `Service::start` for starting services programmatically.
 - Add `Service::query_config` for getting the config of the service.
-- Add `dependencies` to `ServiceInfo`.
+- Add `ServiceInfo::dependencies` for specifying service dependencies.
 
 ### Changed
 - Changed `service_control_handler::register` to accept an `FnMut` rather than just an `Fn` for the
